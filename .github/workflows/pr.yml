@@ -13,7 +13,7 @@ jobs:
         if: failure()
         with:
           name: Test
-          token: ${{ github.token }}
+          token: ${{ secrets.GHP_TOKEN }}
           action_url: 'https://github.com'
           conclusion: ${{ job.status }}
           actions: |
