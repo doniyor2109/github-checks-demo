@@ -1,5 +1,10 @@
 name: Update snapshots
 on:
+  check_suite:
+    types:
+      - rerequested
+      - completed
+      - requested
   check_run:
     types:
       - requested_action
