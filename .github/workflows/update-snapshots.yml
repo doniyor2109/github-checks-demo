@@ -1,7 +1,7 @@
 name: Update snapshots
 on:
   check_run:
-    types: [requested_action]
+    types: [rerequested, completed]
 jobs:
   update-snapshots:
     if: ${{ github.event.requested_action.identifier == 'update-snapshots' }}
