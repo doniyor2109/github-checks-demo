@@ -1,0 +1,20 @@
+name: PR
+
+on:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: exit 1;
+      - uses: LouisBrunner/checks-action@v1.1.1
+        if: failure()
+        with:
+          name: Test
+          token: ${{ github.token }}
+          action_url: 'https://github.com'
+          conclusion: ${{ job.status }}
+          actions: |
+            [{ "label": "Update Snapshots", "description": "", "identifier": "update-snapshots" }]
