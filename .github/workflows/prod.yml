@@ -6,14 +6,15 @@ on:
       - main
 
 
-concurrency:
-  group: Production-${{ github.run_id }}
-  cancel-in-progress: false
+
 
 jobs:
   release:
     runs-on: ubuntu-latest
     environment: Production-${{ matrix.app }}
+    concurrency:
+      group: Production-${{ github.run_id }}
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       matrix:
