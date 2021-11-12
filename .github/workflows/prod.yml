@@ -16,3 +16,5 @@ jobs:
       fail-fast: false
       matrix:
         app: [a, b, c]
+    steps:
+      - run: echo ${{ matrix.app }}
