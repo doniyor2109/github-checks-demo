@@ -12,6 +12,7 @@ jobs:
     environment: Production-${{ matrix.app }}    
     concurrency:
       group: Production
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       matrix:
