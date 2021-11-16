@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Show Information
         run: |
+          echo '::set-output name=version::${{ github.run_id }}.${{ github.run_attempt }}'
           echo "Name is ${{ github.event.inputs.name }} "
           echo "This workflow run is triggered by ${{ github.event_name }} "
           echo " *****************************************************************************"
