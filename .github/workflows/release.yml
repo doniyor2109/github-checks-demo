@@ -28,5 +28,7 @@ jobs:
         with:
           ref: ${{ steps.vars.outputs.branch }}
       - uses: fregante/setup-git-user@v1
-      - run: echo "test"
+      - run: |
+          echo "test"
+          echo ${GITHUB_REF##*-}
         
